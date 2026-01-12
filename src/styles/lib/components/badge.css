@@ -1,0 +1,8 @@
+.badge {
+  padding: var(--badge-pad-y) var(--badge-pad-x);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  background: color-mix(in oklch, var(--color-primary), white 85%);
+  color: var(--color-primary);
+}

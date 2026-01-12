@@ -1,0 +1,32 @@
+.card {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.card-title {
+  font-size: var(--font-size-lg);
+}
+
+.card-body {
+  color: var(--color-muted);
+}
+
+.tile {
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: var(--border-width) dashed var(--color-border);
+  text-align: center;
+}

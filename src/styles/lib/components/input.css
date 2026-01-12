@@ -1,0 +1,200 @@
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+.help {
+  font-size: var(--font-size-xs);
+  color: var(--color-muted);
+}
+
+.input.success + .help,
+.textarea.success + .help,
+.select.success + .help {
+  color: var(--color-success);
+}
+
+.input.warning + .help,
+.textarea.warning + .help,
+.select.warning + .help {
+  color: var(--color-warning);
+}
+
+.input.error + .help,
+.textarea.error + .help,
+.select.error + .help {
+  color: var(--color-error);
+}
+
+.input[type="color"] {
+  padding: 0 var(--space-sm);
+}
+
+.file {
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: var(--color-muted);
+}
+
+.file::file-selector-button {
+  margin-right: var(--space-sm);
+  padding: 0 var(--space-md);
+  height: var(--control-height);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-subtle);
+  cursor: pointer;
+}
+
+.file::file-selector-button:hover {
+  background: color-mix(in oklch, var(--color-primary), white 85%);
+}
+
+.range {
+  width: 100%;
+  accent-color: var(--color-primary);
+}
+
+.input,
+.textarea,
+.select {
+  padding: 0 var(--space-md);
+  height: var(--control-height);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--color-border);
+  background: white;
+  transition:
+    border-color var(--transition-fast) ease,
+    box-shadow var(--transition-fast) ease;
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 var(--focus-ring)
+      color-mix(in oklch, var(--color-primary), white 70%);
+  }
+
+  &.error {
+    border-color: var(--color-error);
+  }
+
+  &.success {
+    border-color: var(--color-success);
+  }
+
+  &.warning {
+    border-color: var(--color-warning);
+  }
+}
+
+.textarea {
+  min-height: var(--textarea-min-height);
+  height: auto;
+  padding: var(--space-sm) var(--space-md);
+  resize: vertical;
+}
+
+.checkbox,
+.radio,
+.toggle {
+  margin: 0;
+}
+
+.checkbox,
+.radio {
+  appearance: none;
+  width: var(--control-box-size);
+  height: var(--control-box-size);
+  border: var(--border-width) solid var(--color-border);
+  background: white;
+  display: grid;
+  place-content: center;
+  transition:
+    border-color var(--transition-fast) ease,
+    box-shadow var(--transition-fast) ease;
+}
+
+.checkbox {
+  border-radius: var(--control-radius);
+}
+
+.radio {
+  border-radius: 50%;
+}
+
+.checkbox::before,
+.radio::before {
+  content: "";
+  width: var(--control-mark-size);
+  height: var(--control-mark-size);
+  background: var(--color-primary);
+  transform: scale(0);
+  transition: transform var(--transition-fast) ease;
+}
+
+.checkbox::before {
+  border-radius: clamp(
+    0px,
+    calc(var(--control-radius) - var(--border-width-strong)),
+    var(--control-radius)
+  );
+}
+
+.radio::before {
+  border-radius: 50%;
+}
+
+.checkbox:checked::before,
+.radio:checked::before {
+  transform: scale(1);
+}
+
+.checkbox:focus-visible,
+.radio:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring)
+    color-mix(in oklch, var(--color-primary), white 70%);
+  border-color: var(--color-primary);
+}
+
+.toggle {
+  appearance: none;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  border-radius: var(--radius-pill);
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-subtle);
+  padding: var(--toggle-padding);
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background var(--transition-fast) ease,
+    border-color var(--transition-fast) ease;
+}
+
+.toggle::before {
+  content: "";
+  width: var(--toggle-thumb);
+  height: var(--toggle-thumb);
+  border-radius: var(--radius-pill);
+  background: white;
+  box-shadow: var(--shadow-xs);
+  transform: translateX(0);
+  transition: transform var(--transition-fast) ease;
+}
+
+.toggle:checked {
+  background: color-mix(in oklch, var(--color-primary), white 80%);
+  border-color: var(--color-primary);
+}
+
+.toggle:checked::before {
+  transform: translateX(var(--toggle-translate));
+}
+
+.toggle:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring)
+    color-mix(in oklch, var(--color-primary), white 70%);
+}

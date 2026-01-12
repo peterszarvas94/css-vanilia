@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layered Vanilla CSS Demo</title>
+  </head>
+  <body class="page">
+    <div class="layout">
+      <aside class="sidebar stack-md">
+        <div class="sidebar-title">Theme Controls</div>
+        <label class="grid gap-sm">
+          <span class="label">Primary color</span>
+          <input class="input" type="color" value="#2563eb" data-var="--color-primary" />
+        </label>
+        <label class="grid gap-sm">
+          <span class="label">Base spacing</span>
+          <input
+            class="range"
+            type="range"
+            min="0.25"
+            max="2"
+            step="0.05"
+            value="1"
+            data-var="--space-md"
+            data-unit="rem"
+          />
+        </label>
+        <label class="grid gap-sm">
+          <span class="label">Corner radius</span>
+          <input
+            class="range"
+            type="range"
+            min="0"
+            max="12"
+            step="1"
+            value="8"
+            data-var="--radius-sm"
+            data-unit="px"
+          />
+        </label>
+        <label class="grid gap-sm">
+          <span class="label">Control height</span>
+          <input
+            class="range"
+            type="range"
+            min="2"
+            max="3.5"
+            step="0.1"
+            value="2.5"
+            data-var="--control-height"
+            data-unit="rem"
+          />
+        </label>
+        <label class="grid gap-sm">
+          <span class="label">Content width</span>
+          <input
+            class="input"
+            type="number"
+            min="480"
+            max="1200"
+            step="10"
+            value="720"
+            data-var="--page-max"
+            data-unit="px"
+          />
+        </label>
+      </aside>
+      <main class="page-content stack-md">
+        <header class="stack-sm">
+          <h1 class="page-title">Layered Vanilla CSS Demo</h1>
+          <p class="page-subtitle">
+            Buttons, cards, inputs, and utilities working together.
+            <a class="link" href="#">Docs link</a>
+          </p>
+        </header>
+
+      <section class="card stack-sm">
+        <div class="card-header">
+          <h2 class="card-title">Button Component</h2>
+          <span class="badge">Component</span>
+        </div>
+        <p class="card-body">
+          Buttons with component-scoped state classes and shared tokens.
+        </p>
+
+        <div class="flex gap-sm">
+          <button class="btn" id="saveBtn">Primary button</button>
+          <button class="btn error" id="deleteBtn">Error button</button>
+          <button class="btn subtle" id="cancelBtn">Subtle button</button>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Text Inputs</h2>
+        <p class="card-body">Text, email, password, and number inputs.</p>
+        <div class="stack-sm">
+          <label class="grid gap-sm">
+            <span class="label">Text</span>
+            <input class="input" type="text" placeholder="Lorem ipsum" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Email</span>
+            <input class="input" type="email" placeholder="lorem@ipsum.com" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Password</span>
+            <input class="input" type="password" placeholder="Lorem ipsum" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Number</span>
+            <input class="input" type="number" placeholder="42" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">URL</span>
+            <input class="input" type="url" placeholder="https://example.com" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Telephone</span>
+            <input class="input" type="tel" placeholder="+1 555 000 0000" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Selectors and Pickers</h2>
+        <p class="card-body">Native select, date, color, file, and range inputs.</p>
+        <div class="stack-sm">
+          <label class="grid gap-sm">
+            <span class="label">Select</span>
+            <select class="select">
+              <option>Option A</option>
+              <option>Option B</option>
+              <option>Option C</option>
+            </select>
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Date</span>
+            <input class="input" type="date" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Time</span>
+            <input class="input" type="time" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Date & Time</span>
+            <input class="input" type="datetime-local" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Range</span>
+            <input class="range" type="range" min="0" max="100" value="60" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Color</span>
+            <input class="input" type="color" value="#2563eb" />
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">File</span>
+            <input class="file" type="file" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Checkboxes and Radios</h2>
+        <p class="card-body">Native choices with explicit classes.</p>
+        <div class="stack-sm">
+          <label class="flex items-center gap-sm">
+            <input class="checkbox" type="checkbox" checked />
+            <span class="label">Checkbox</span>
+          </label>
+          <label class="flex items-center gap-sm">
+            <input class="checkbox" type="checkbox" />
+            <span class="label">Checkbox</span>
+          </label>
+          <label class="flex items-center gap-sm">
+            <input class="radio" type="radio" name="radio-group" checked />
+            <span class="label">Radio</span>
+          </label>
+          <label class="flex items-center gap-sm">
+            <input class="radio" type="radio" name="radio-group" />
+            <span class="label">Radio</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Progress</h2>
+        <p class="card-body">Native progress element.</p>
+        <progress class="progress" value="72" max="100">72%</progress>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Input Variants</h2>
+        <p class="card-body">Shared input styling with state classes.</p>
+        <div class="stack-sm">
+          <label class="grid gap-sm">
+            <span class="label">Default</span>
+            <input class="input" type="text" placeholder="Lorem ipsum" />
+            <span class="help">Default state.</span>
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Success</span>
+            <input class="input success" type="text" placeholder="Lorem ipsum" />
+            <span class="help">Success state.</span>
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Warning</span>
+            <input class="input warning" type="text" placeholder="Lorem ipsum" />
+            <span class="help">Warning state.</span>
+          </label>
+          <label class="grid gap-sm">
+            <span class="label">Error</span>
+            <input class="input error" type="text" placeholder="Lorem ipsum" />
+            <span class="help">Error state.</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Alerts Component</h2>
+        <p class="card-body">Alert messages with state classes and optional actions.</p>
+        <div class="alert success">
+          <div class="stack-xs">
+            <div class="alert-title">Success alert</div>
+            <div class="alert-message">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <button class="btn subtle">Action</button>
+        </div>
+        <div class="alert warning">
+          <div class="stack-xs">
+            <div class="alert-title">Warning alert</div>
+            <div class="alert-message">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <button class="btn subtle">Action</button>
+        </div>
+        <div class="alert info">
+          <div class="stack-xs">
+            <div class="alert-title">Info alert</div>
+            <div class="alert-message">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <button class="btn subtle">Action</button>
+        </div>
+        <div class="alert error">
+          <div class="stack-xs">
+            <div class="alert-title">Error alert</div>
+            <div class="alert-message">Lorem ipsum dolor sit amet.</div>
+          </div>
+          <button class="btn subtle">Action</button>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">List Component</h2>
+        <p class="card-body">List layout with metadata and badge slots.</p>
+        <ul class="list">
+          <li class="list-item">
+            <div class="stack-xs">
+              <div class="list-title">List item</div>
+              <div class="list-meta">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <span class="badge">Tag</span>
+          </li>
+          <li class="list-item">
+            <div class="stack-xs">
+              <div class="list-title">List item</div>
+              <div class="list-meta">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <span class="badge">Tag</span>
+          </li>
+          <li class="list-item">
+            <div class="stack-xs">
+              <div class="list-title">List item</div>
+              <div class="list-meta">Lorem ipsum dolor sit amet.</div>
+            </div>
+            <span class="badge">Tag</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Table Component</h2>
+        <p class="card-body">Structured rows and columns with table styling.</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Column</th>
+              <th>Column</th>
+              <th>Column</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Accordion Component</h2>
+        <p class="card-body">Expandable sections using native <code>&lt;details&gt;</code>.</p>
+        <div class="accordion">
+          <details open>
+            <summary>Accordion item</summary>
+            <div class="accordion-content">Lorem ipsum dolor sit amet.</div>
+          </details>
+          <details>
+            <summary>Accordion item</summary>
+            <div class="accordion-content">Lorem ipsum dolor sit amet.</div>
+          </details>
+          <details>
+            <summary>Accordion item</summary>
+            <div class="accordion-content">Lorem ipsum dolor sit amet.</div>
+          </details>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Menu Component</h2>
+        <p class="card-body">Horizontal and vertical menus with optional icons.</p>
+        <div class="grid gap-md grid-2">
+          <nav class="menu menu-horizontal" aria-label="Primary">
+            <ul class="menu-list">
+              <li>
+                <button class="menu-item menu-item-current" type="button">
+                  <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3 12h18M3 6h18M3 18h18"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Menu item
+                </button>
+              </li>
+              <li>
+                <button class="menu-item" type="button">
+                  <svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 6v12M6 12h12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Menu item
+                </button>
+              </li>
+              <li>
+                <button class="menu-item" type="button">Menu item</button>
+              </li>
+            </ul>
+          </nav>
+          <nav class="menu menu-vertical" aria-label="Secondary">
+            <ul class="menu-list">
+              <li>
+                <button class="menu-item menu-item-current" type="button">Menu item</button>
+              </li>
+              <li>
+                <button class="menu-item" type="button">Menu item</button>
+              </li>
+              <li>
+                <button class="menu-item" type="button">Menu item</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Tabs Component</h2>
+        <p class="card-body">Tabbed navigation with panels toggled by JS.</p>
+        <div class="tabs" data-tabs>
+          <div class="tabs-list" role="tablist">
+            <button class="tabs-tab is-active" type="button" role="tab" data-tab="overview">
+              Tab label
+            </button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="billing">
+              Tab label
+            </button>
+            <button class="tabs-tab" type="button" role="tab" data-tab="integrations">
+              Tab label
+            </button>
+          </div>
+          <div class="tabs-panel" data-panel="overview">
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div class="tabs-panel hidden" data-panel="billing">
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div class="tabs-panel hidden" data-panel="integrations">
+            Lorem ipsum dolor sit amet.
+          </div>
+        </div>
+      </section>
+
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Code Block Component</h2>
+        <p class="card-body">Preformatted code with monospace styling.</p>
+        <pre class="code">/* Code block component */
+Lorem ipsum dolor sit amet.</pre>
+      </section>
+
+      <section class="card stack-sm">
+        <h2 class="card-title">Utilities Component</h2>
+        <p class="card-body">Grid and gap utilities for layout-only spacing.</p>
+        <div class="grid gap-sm grid-2">
+          <div class="tile">Utility: .grid</div>
+          <div class="tile">Utility: .grid-2</div>
+          <div class="tile">Utility: .gap-sm</div>
+          <div class="tile">Utility: .stack-sm</div>
+        </div>
+      </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

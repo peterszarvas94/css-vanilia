@@ -1,0 +1,4 @@
+@layer lib, custom;
+
+@import "./lib/lib.css" layer(lib);
+@import "./custom.css" layer(custom);

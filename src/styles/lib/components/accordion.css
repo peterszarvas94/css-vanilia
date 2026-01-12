@@ -1,0 +1,40 @@
+.accordion {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.accordion details {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.accordion summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  column-gap: var(--space-sm);
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "+";
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.accordion details[open] summary::after {
+  content: "–";
+}
+
+.accordion-content {
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+}

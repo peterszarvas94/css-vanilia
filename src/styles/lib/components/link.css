@@ -1,0 +1,11 @@
+.link {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-bottom: var(--border-width) solid
+    color-mix(in oklch, var(--color-primary), transparent 70%);
+  padding-bottom: var(--link-underline-offset);
+}
+
+.link:hover {
+  border-bottom-color: var(--color-primary);
+}
